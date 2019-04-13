@@ -1,2 +1,2 @@
 # Tetris
-Tetris game that i've made.
+Tetris game - Rotation algorithm.
