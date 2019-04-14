@@ -32,6 +32,11 @@ public class Grid {
 	public static final int TOP = 50; // pixel position of top of grid
 
 	public static final Color EMPTY = Color.WHITE;
+	
+	//public static int numClears = 0;
+	public static int score = 0;
+	
+	public static int numClears= 0;
 
 	/**
 	 * Creates the grid
@@ -86,10 +91,13 @@ public class Grid {
         
         private void removeRow(int r)
         {
+        	
             //change color of that row to white
             for (int col = 0; col < WIDTH; col++) {
                             set(r,col,EMPTY);
+                                  
             }
+            
 
             //move the rest of the thing down
             for (int row = r-1; row >= 0; row--) {
@@ -115,9 +123,32 @@ public class Grid {
                 if(col == WIDTH) // a row is found
                 {
                     removeRow(row);
+                    numClears++; 
                 }
             } 
-
+            
+            switch(numClears) 
+            {
+            case 1: 
+            	score += 100;
+            	break;
+            case 2:
+            	score += 300;
+            	break;
+            case 3: 
+            	score += 500;
+            	break;
+            case 4: 
+            	score += 800;                                                                                                                                                                                                                                                                                                                                
+            	break;
+            case 5: 
+            	score += 1000;
+            	break;
+            	default: 
+            		break;
+            		
+            };
+            numClears = 0;
         }
 
 	/**
