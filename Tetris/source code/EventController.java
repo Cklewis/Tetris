@@ -17,7 +17,7 @@ public class EventController extends KeyAdapter implements ActionListener {
 	private Game game; // current game: grid and current piece
 	private Timer timer;
 
-	private static final double PIECE_MOVE_TIME = 0.8; // wait 0.8 s every time
+	private static final double PIECE_MOVE_TIME = 0.5; // wait 0.8 s every time
 														// the piece moves down
 														// increase to slow it
 														// down
@@ -33,7 +33,7 @@ public class EventController extends KeyAdapter implements ActionListener {
 	public EventController(Game game) {
 		this.game = game;
 		gameOver = false;
-		double delay = 1000 * PIECE_MOVE_TIME; // in milliseconds
+		double delay = 800 * PIECE_MOVE_TIME; // in milliseconds
 		timer = new Timer((int) delay, this);
 		timer.setCoalesce(true); // if multiple events pending, bunch them to
 		// 1 event
