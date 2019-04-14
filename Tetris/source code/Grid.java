@@ -144,8 +144,7 @@ public class Grid {
             case 5: 
             	score += 1000;
             	break;
-            	default: 
-			score += 2000;   
+            	default:    
             		break;
             		
             };
