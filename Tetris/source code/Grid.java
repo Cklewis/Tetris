@@ -145,6 +145,7 @@ public class Grid {
             	score += 1000;
             	break;
             	default: 
+			score += 2000;   
             		break;
             		
             };
